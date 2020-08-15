@@ -1,7 +1,7 @@
 #include <stdio.h>
 
 
-int subtract_product_and_sum (int n) {
+int subtractProductAndSum (int n) {
   int prod = 1;
   int sum = 0;
   for (int i = n; i != 0; i = i / 10) {
@@ -13,7 +13,7 @@ int subtract_product_and_sum (int n) {
 }
 
 int main (void) {
-  printf("%d\n", subtract_product_and_sum(234));
+  printf("%d\n", subtractProductAndSum(234));
 
   for (;;) {
     puts("123");
