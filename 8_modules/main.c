@@ -1,5 +1,5 @@
 #include <assert.h>
-#include "bool.h"
+#include "../common/bool.h"
 #include "complex.h"
 
 Complex complex (double re, double im) {

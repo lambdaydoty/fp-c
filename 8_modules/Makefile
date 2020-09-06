@@ -5,7 +5,7 @@ CC=gcc
 a.out: $(OBJECTS)
 	cc -o a.out $(OBJECTS) -lm
 
-main.o: main.c complex.h bool.h
+main.o: main.c complex.h ../common/bool.h
 complex.o: complex.c complex.h
 
 test:
