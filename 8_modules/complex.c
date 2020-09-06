@@ -1,6 +1,11 @@
 #include <math.h>
 #include "complex.h"
 
+Complex complex (double re, double im) {
+  Complex z = { re, im };
+  return z;
+}
+
 Complex complex_sub ( Complex c, Complex d ) {
   Complex r;
   r.x = c.x - d.x;

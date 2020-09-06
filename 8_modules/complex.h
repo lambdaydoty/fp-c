@@ -7,6 +7,7 @@ typedef struct {
   double y;
 } Complex;
 
+extern Complex complex ( double, double );
 extern Complex complex_sub ( Complex, Complex );
 extern Complex complex_mult ( Complex, Complex );
 extern Complex complex_conjugate ( Complex );

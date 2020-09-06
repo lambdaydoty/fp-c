@@ -2,11 +2,6 @@
 #include "../common/bool.h"
 #include "complex.h"
 
-Complex complex (double re, double im) {
-  Complex z = { re, im };
-  return z;
-}
-
 Complex complex_square ( Complex c ) {
   return complex_mult( c, c );
 }
