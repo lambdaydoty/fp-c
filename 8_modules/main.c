@@ -1,4 +1,5 @@
 #include <assert.h>
+#include "main.h"
 #include "../common/bool.h"
 #include "complex.h"
 

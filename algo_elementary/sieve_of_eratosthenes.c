@@ -1,4 +1,6 @@
-#include <stdio.h>
+#include <assert.h>
+#include "c_intarray.h"
+#include "../common/bool.h"
 
 /**
  *  The sieve of Eratosthenes
@@ -22,28 +24,30 @@
 
 #define N 100
 
-typedef enum { false = 0, true = 1 } bool;
-
 bool divided(int n, int m) { return m % n == 0; }
 
 int main () {
-  bool prime[N + 1];
+  IntArray prime = intarray_init( N );
 
-  for (int i = 1; i <= N; i++) {
-    prime[i] = true;
+  for (int i = 2; i <= N; i++) {
+    prime.a[i] = true;
   }
 
   for (int i = 2; i <= N/2; i++) {
-    if (prime[i]) {
+    if (prime.a[i]) {
       for (int m = 2; m <= N/i; m++) {
-        prime[i * m] = false;
+        prime.a[i * m] = false;
       }
     }
   }
 
-  for (int i = 2; i <= N; i++) {
-    if (prime[i]) {
-      printf("%d ", i);
-    }
-  }
+  assert (prime.a[2]);
+  assert (prime.a[3]);
+  assert (prime.a[5]);
+  assert (prime.a[47]);
+  assert (prime.a[73]);
+  assert (prime.a[89]);
+  assert (!prime.a[4]);
+  assert (!prime.a[51]);
+  assert (!prime.a[99]);
 }
