@@ -25,21 +25,19 @@
 
 void urlify (char * str, int properLen) {
   /* count spaces */
-  int sp = 0;
+  int spcount = 0;
   for (int i = 0; i < properLen; i++) {
-    if (str[i] == SP) sp += 1;
+    if (str[i] == SP) spcount++;
   }
 
   for (int j = properLen - 1; j >= 0; j--) {
-    /* printf("str: [%s] | %c | j == %d sp == %d\n", str, str[j], j, sp); */
-
-    if (str[j] == SP) sp -= 1;
-    if (str[j] == SP) {
-      str[SHIFT(j, sp)] = '%';
-      str[SHIFT(j, sp) + 1] = '2';
-      str[SHIFT(j, sp) + 2] = '0';
+    if (str[j] != SP) {
+      str[SHIFT(j, spcount)] = str[j];
     } else {
-      str[SHIFT(j, sp)] = str[j];
+      spcount--;
+      str[SHIFT(j, spcount)] = '%';
+      str[SHIFT(j, spcount) + 1] = '2';
+      str[SHIFT(j, spcount) + 2] = '0';
     }
   }
 }
