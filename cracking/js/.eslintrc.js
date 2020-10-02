@@ -12,4 +12,7 @@ module.exports = {
     "comma-dangle": ["error", "always-multiline"],
     "no-only-tests/no-only-tests": "error",
   },
+  "env": {
+    "jest/globals": true
+  }
 }

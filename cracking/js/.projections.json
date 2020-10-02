@@ -1,0 +1,28 @@
+{
+  "package.json": {
+    "type": "package_json"
+  },
+
+  "Dockerfile": {
+    "type": "docker"
+  },
+
+  ".env.example": {
+    "type": "envex",
+    "alternate": ".env"
+  },
+  ".env": {
+    "type": "env",
+    "alternate": ".env.example"
+  },
+
+  "*.js": {
+    "alternate": "test/{}.test.js"
+  },
+
+  "test/*.test.js": {
+    "type": "test",
+    "alternate": "{}.js"
+  }
+
+}
