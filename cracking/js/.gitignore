@@ -1,0 +1,10 @@
+__scripts__
+*.swp
+*.swo
+*~
+.DS_Store
+node_modules/
+npm-debug.log
+doc/
+build/
+data/
