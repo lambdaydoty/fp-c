@@ -1,11 +1,11 @@
 #include <stdio.h>
 #include <stdlib.h>
 
-#define DEF_NODE (T_KEY, T_NODE, T_LIST)    \
-  typedef struct T_NODE {                   \
-    T_KEY key;                              \
-    struct T_NODE * next;                   \
-  } * T_LIST
+/* #define DEF_NODE (T_KEY, T_NODE, T_LIST)    \ */
+/*   typedef struct T_NODE {                   \ */
+/*     T_KEY key;                              \ */
+/*     struct T_NODE * next;                   \ */
+/*   } * T_LIST */
 
 typedef struct node {
   int key;
@@ -37,7 +37,7 @@ Node * new_list () {
    *
    * vs. --------------------------------------------------
    *
-   * head:[@]               head:[.] -> [3|@]
+   * head:[@]               head:[.] -> [3|@]        head:[.] -> [4|.] -> [3|@]
    *
    * see. Aho [6.4]
    *
