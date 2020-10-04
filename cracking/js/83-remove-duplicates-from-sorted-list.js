@@ -38,6 +38,9 @@ module.exports = function (head) {
      * head -> (1, null)              | list -> (undef, next) ->  (1, null)              | ptr[0..0]: 0x.... -> |1|
      * head -> (1, next) -> (2, null) | list -> (undef, next) ->  (1, next) -> (2, null) | ptr[0..1]: 0x.... -> |1|2|
      * ...
+     * head                             list.next         list.next                      | ptr
+     * head.next                        list.next.next    list.next.next.val             | ptr+0      *(ptr+0)
+     *                                  list.next.next    list.next.next.val             | ptr+1      *(ptr+1)
      */
     let q = list
     while (q.next) {
