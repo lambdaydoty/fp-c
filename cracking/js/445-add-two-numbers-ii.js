@@ -50,7 +50,7 @@ module.exports = function (l1, l2) {
     return !x ? 0 : 1 + length(x.next)
   }
 
-  function show (node) {
-    return !node ? '(null)' : `${node.val} -> ${show(node.next)}`
-  }
+  // function show (node) {
+  //   return !node ? '(null)' : `${node.val} -> ${show(node.next)}`
+  // }
 }
